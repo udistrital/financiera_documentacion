@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2-alpha1" last-position="0,0" last-zoom="1" max-obj-count="4"
+	 default-schema="public" default-owner="postgres">
+<database name="financiera" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="plan_cuentas" layer="0" rect-visible="true" fill-color="#99ff74">
+	<role name="postgres"/>
+</schema>
+
+<table name="apropiacion" layer="0" collapse-mode="2" max-obj-count="6">
+	<schema name="plan_cuentas"/>
+	<role name="postgres"/>
+	<comment><![CDATA[tabla que registra las apropiaciones iniciales para los rubros]]></comment>
+	<position x="500" y="100"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[identificador de la apropiacion]]></comment>
+	</column>
+	<column name="vigencia" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[año de la vigencia a la que pertenece la apropiacion]]></comment>
+	</column>
+	<column name="valor" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+		<comment><![CDATA[valor en moneda de la apropiacion]]></comment>
+	</column>
+	<constraint name="pk_apropiacion" type="pk-constr" table="plan_cuentas.apropiacion">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="estado_apropiacion_id" index="3"/>
+		<object name="rubro_id" index="4"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="fk_apropiacion_estado_apropiacion" index="1"/>
+	</customidxs>
+</table>
+
+<table name="estado_apropiacion" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="plan_cuentas"/>
+	<role name="postgres"/>
+	<comment><![CDATA[tabla parametrica que registra los estados de las apropiaciones]]></comment>
+	<position x="400" y="380"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[identificador único del estado de la apropiacion]]></comment>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[nombre del estado de la apropiacion que sera visible]]></comment>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[descripcion del estado de la apropiacion]]></comment>
+	</column>
+	<column name="codigo_abreviacion" not-null="true">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[acronimo del nombre del estado de la apropiación]]></comment>
+	</column>
+	<column name="numero_orden">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[por si es necesario establecer una orden a los registros que no se encuentren definidos]]></comment>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="bool" length="0"/>
+	</column>
+	<constraint name="pk_estado_apropiacion" type="pk-constr" table="plan_cuentas.estado_apropiacion">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="rel_apropiacion_estado_apropiacion" type="rel1n" layer="0"
+	 src-col-pattern="{st}_{sc}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="fk_{dt}_{st}"
+	 custom-color="#1326ce"
+	 src-table="plan_cuentas.estado_apropiacion"
+	 dst-table="plan_cuentas.apropiacion"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="100.885" y="-17.5857"/>
+	</label>
+</relationship>
+
+<schema name="plan cuentas" layer="0" rect-visible="true" fill-color="#e10003">
+	<role name="postgres"/>
+	<comment><![CDATA[esquema para gestion de rubros ]]></comment>
+</schema>
+
+<table name="rubro" layer="0" alias="rubro" collapse-mode="2" max-obj-count="7">
+	<schema name="plan_cuentas"/>
+	<role name="postgres"/>
+	<comment><![CDATA[la tabla rubro almacena la informacion de los rubros (nodos del arbol de rubros)]]></comment>
+	<position x="20" y="40"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[identificador de la tabla rubro]]></comment>
+	</column>
+	<column name="organizacion" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[codigo identificador de la entidad  del distrito para el rubro]]></comment>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="varchar" length="50"/>
+		<comment><![CDATA[codigo del rubro de la forma 0-0-0-0... donde se utilizan numeros identificadores para los ancestros del rubro separados por guiones y el ultimo digito es el codigo perteneciente al rubro]]></comment>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="varchar" length="250"/>
+		<comment><![CDATA[nombre del rubro]]></comment>
+	</column>
+	<column name="unidad_ejecutora" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[unidad ejecutora para el rubro]]></comment>
+	</column>
+	<column name="descripcion">
+		<type name="text" length="0"/>
+		<comment><![CDATA[descripcion adicional del rubro suministrada por el funcionario durante el proceso de registro de rubro]]></comment>
+	</column>
+	<constraint name="pk_rubro" type="pk-constr" table="plan_cuentas.rubro">
+		<columns names="id" ref-type="src-columns"/>
+		<comment><![CDATA[restriccion llave primaria de rubro]]></comment>
+	</constraint>
+	<constraint name="uq_organizacion_codigo_unidad_ejecutora_rubro" type="uq-constr" table="plan_cuentas.rubro">
+		<columns names="organizacion,unidad_ejecutora,codigo" ref-type="src-columns"/>
+		<comment><![CDATA[restriccion creada para que dentro de la organizacion (entidad del distrito) y a su vez dentro de la unidad ejecutora no puedan existir 2 rubros con un mismo codigo, sin embargo pudiendo existir rubros con el mismo codigo en unidades u organizaciones diferentes.]]></comment>
+	</constraint>
+	<constraint name="ck_codigo_rubro" type="ck-constr" table="plan_cuentas.rubro">
+			<expression><![CDATA[((codigo)::text ~ '^([0-9]+-)+[0-9]+$'::text)]]></expression>
+		<comment><![CDATA[este check se encarga de que los codigos esten restringidos a la forma de 1 a 8 secuencias de digitos 999 separados por guiones -]]></comment>
+	</constraint>
+</table>
+
+<table name="rama" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="plan_cuentas"/>
+	<role name="postgres"/>
+	<comment><![CDATA[rama almacena relaciones entre los rubros]]></comment>
+	<position x="20" y="400"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[identificador de la tabla rama que almacena relaciones entre rubros]]></comment>
+	</column>
+	<column name="rubro_padre" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[identificador del rubro que cumple el rol de padre en la relacion]]></comment>
+	</column>
+	<column name="rubro_hijo" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[identificador del rubro que cumple el rol de hijo en la relacion]]></comment>
+	</column>
+	<constraint name="pk_rama" type="pk-constr" table="plan_cuentas.rama">
+		<columns names="id" ref-type="src-columns"/>
+		<comment><![CDATA[restriccion de llave primaria de la tabla rama]]></comment>
+	</constraint>
+</table>
+
+<relationship name="rel_apropiacion_rubro" type="rel1n" layer="0"
+	 src-col-pattern="{st}_{sc}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="fk_{dt}_{st}"
+	 custom-color="#a32d43"
+	 src-table="plan_cuentas.rubro"
+	 dst-table="plan_cuentas.apropiacion"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="21.0404" y="-129.331"/>
+	</label>
+</relationship>
+
+<constraint name="fk_rama_rubro_padre" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="RESTRICT" ref-table="plan_cuentas.rubro" table="plan_cuentas.rama">
+	<columns names="rubro_padre" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+		<comment><![CDATA[relacion llave foranea entre la tabla rama y la tabla rubro para el rubro padre]]></comment>
+</constraint>
+
+<constraint name="fk_rama_rubro_hijo" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="RESTRICT" ref-table="plan_cuentas.rubro" table="plan_cuentas.rama">
+	<columns names="rubro_hijo" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+		<comment><![CDATA[relacion llave foranea entre la tabla rama y la tabla rubro para el rubro hijo]]></comment>
+</constraint>
+
+<relationship name="rel_rama_rubro" type="relfk" layer="0"
+	 src-table="plan_cuentas.rama"
+	 dst-table="plan_cuentas.rubro" reference-fk="fk_rama_rubro_padre"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-50.67" y="-26.7266"/>
+	</label>
+</relationship>
+
+<relationship name="rel_rama_rubro1" type="relfk" layer="0"
+	 src-table="plan_cuentas.rama"
+	 dst-table="plan_cuentas.rubro" reference-fk="fk_rama_rubro_hijo"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="61.4432" y="-46.7266"/>
+	</label>
+</relationship>
+
+<permission>
+	<object name="plan_cuentas.apropiacion" type="table"/>
+	<roles names="postgres"/>
+	<privileges select="grant-op" delete="grant-op" insert="grant-op" update="grant-op" truncate="grant-op" references="grant-op" trigger="grant-op"/>
+</permission>
+<permission>
+	<object name="plan_cuentas" type="schema"/>
+	<roles names="postgres"/>
+	<privileges create="grant-op" usage="grant-op"/>
+</permission>
+</dbmodel>
