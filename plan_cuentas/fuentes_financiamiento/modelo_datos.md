@@ -44,4 +44,4 @@ almacena la informacion de las fuentes de financiamiento
 
 - **Restricciones**
 
-- pk_fuente_financiamiento_apropiacion : primary key de la tabla fuente de financiamiento
+- pk_fuente_financiamiento_apropiacion : primary key de la tabla fuente de financiamiento apropiacion
