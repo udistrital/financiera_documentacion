@@ -44,6 +44,4 @@ almacena la informacion de las fuentes de financiamiento
 
 - **Restricciones**
 
-- CONSTRAINT pk_rama ON "plan cuentas".rama : restriccion de llave primaria de la tabla rama
-- CONSTRAINT fk_rama_rubro_padre ON "plan cuentas".rama  : 'relacion llave foranea entre la tabla rama y la tabla rubro para el rubro padre'
-- CONSTRAINT fk_rama_rubro_hijo ON "plan cuentas".rama  : 'relacion llave foranea entre la tabla rama y la tabla rubro para el rubro hijo'
+- pk_fuente_financiamiento_apropiacion : primary key de la tabla fuente de financiamiento
