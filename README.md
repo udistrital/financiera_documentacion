@@ -1,4 +1,4 @@
-# Documentacion general del istema de gestion financiera Kronos.
+# Documentacion general del Sistema de gestion financiera Kronos.
 
 En este repositorio se guarda la documentación y diseños relacionados con el sistema de gestión financiera Kronos de la Universidad Distrital.
 
@@ -32,4 +32,8 @@ En el sistema Kronos se cuenta con los siguientes módulos para el subsistema de
 - [Mockups](plan_cuentas/fuentes_financiamiento/mockups.md)
 - [Modelo de datos](plan_cuentas/fuentes_financiamiento/modelo_datos.md)
 
- 
+>## Movimientos 
+
+>### Movimientos 
+- [Mockups](movimientos/movimientos/mockups.md)
+- [Modelo de datos](movimientos/movimientos/modelo_datos.md)

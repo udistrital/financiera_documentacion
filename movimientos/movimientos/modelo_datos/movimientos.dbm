@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1" last-position="0,0" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<role name="test"
+      superuser="true"
+      createdb="true"
+      replication="true"
+      createrole="true"
+      inherit="true"
+      login="true"
+      bypassrls="true"
+      encrypted="true"
+      password="********"
+      sql-disabled="true">
+</role>
+
+<database name="test" encoding="UTF8" lc-collate="en_US.utf8" lc-ctype="en_US.utf8" is-template="false" allow-conns="true">
+	<role name="test"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="movimientos" rect-visible="true" fill-color="#b8b00b">
+	<role name="test"/>
+</schema>
+
+<sequence name="movimiento_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="movimientos"/>
+	<role name="test"/>
+</sequence>
+
+<table name="movimiento_proceso_externo">
+	<schema name="movimientos"/>
+	<role name="test"/>
+	<comment><![CDATA[Entidad que identifica todos los  diferentes movimientos para procesos externos]]></comment>
+	<position x="60" y="60"/>
+	<column name="id" not-null="true" sequence="movimientos.movimiento_id_seq">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[identificador de la tabla movimiento_proceso_externo]]></comment>
+	</column>
+	<column name="tipo_movimiento_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[campo que relaciona a la tabla de tipo de movimiento]]></comment>
+	</column>
+	<column name="proceso_externo" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador del proceso al que hace referencia este movimiento, por ejemplo apropiaciones, adiciones, traslados, suspensiones, etc]]></comment>
+	</column>
+	<column name="movimiento_proceso_externo">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Campo que hace referencia cuando un movimiento involucra más de un ente externo ]]></comment>
+	</column>
+	<constraint name="pk_movimiento" type="pk-constr" table="movimientos.movimiento_proceso_externo">
+		<columns names="id" ref-type="src-columns"/>
+		<comment><![CDATA[Llave primaria de la entidad movimiento]]></comment>
+	</constraint>
+</table>
+
+<sequence name="movimiento_detalle_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="movimientos"/>
+	<role name="test"/>
+</sequence>
+
+<table name="movimiento_detalle">
+	<schema name="movimientos"/>
+	<role name="test"/>
+	<comment><![CDATA[Entidad que recibe la información detallada de cada movimiento]]></comment>
+	<position x="540" y="80"/>
+	<column name="id" not-null="true" sequence="movimientos.movimiento_detalle_id_seq">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[identificador de la tabla movimiento_detalle]]></comment>
+	</column>
+	<column name="movimiento_id" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment><![CDATA[identificador que relaciona la entidad de movimiento]]></comment>
+	</column>
+	<column name="valor" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+		<comment><![CDATA[valor que corresponda a un movimiento]]></comment>
+	</column>
+	<column name="fecha_registro" not-null="true">
+		<type name="date" length="0"/>
+		<comment><![CDATA[fecha en la que se registra el movimiento]]></comment>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[descripcion del movimiento]]></comment>
+	</column>
+	<constraint name="pk_movimiento_detalle" type="pk-constr" table="movimientos.movimiento_detalle">
+		<columns names="id" ref-type="src-columns"/>
+		<comment><![CDATA[Llave primaria de la entidad movimiento_detalle]]></comment>
+	</constraint>
+</table>
+
+<sequence name="tipo_movimiento_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="movimientos"/>
+	<role name="test"/>
+</sequence>
+
+<table name="tipo_movimiento">
+	<schema name="movimientos"/>
+	<role name="test"/>
+	<comment><![CDATA[Entidad que se encarga de definir los tipos de movimientos de cada proceso]]></comment>
+	<position x="460" y="340"/>
+	<column name="id" not-null="true" sequence="movimientos.tipo_movimiento_id_seq">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[identificador de la tabla tipo_movimiento]]></comment>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="character varying" length="20"/>
+		<comment><![CDATA[nombre del tipo de movimiento]]></comment>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[descripcion detallada del tipo de movimiento]]></comment>
+	</column>
+	<column name="acronimo" not-null="true">
+		<type name="character varying" length="10"/>
+		<comment><![CDATA[Acronimo que pueda identificar y se relacione con el nombre del tipo_movimiento]]></comment>
+	</column>
+	<constraint name="pk_tipo_movimiento" type="pk-constr" table="movimientos.tipo_movimiento">
+		<columns names="id" ref-type="src-columns"/>
+		<comment><![CDATA[Llave primaria de la entidad tipo_movimiento]]></comment>
+	</constraint>
+</table>
+
+<constraint name="fk_movimiento_tipo_movimiento" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="movimientos.tipo_movimiento" table="movimientos.movimiento_proceso_externo">
+	<columns names="tipo_movimiento_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+		<comment><![CDATA[Llave foranea a la tabla de tipo_movimiento]]></comment>
+</constraint>
+
+<constraint name="fk_movimiento_detalle_movimiento" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="movimientos.movimiento_proceso_externo" table="movimientos.movimiento_detalle">
+	<columns names="movimiento_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+		<comment><![CDATA[Llave foranea a la tabla movimiento]]></comment>
+</constraint>
+
+<relationship name="rel_movimiento_tipo_movimiento" type="relfk"
+	 custom-color="#a0d523"
+	 src-table="movimientos.movimiento_proceso_externo"
+	 dst-table="movimientos.tipo_movimiento" reference-fk="fk_movimiento_tipo_movimiento"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_movimiento_detalle_movimiento" type="relfk"
+	 custom-color="#d68f3d"
+	 src-table="movimientos.movimiento_detalle"
+	 dst-table="movimientos.movimiento_proceso_externo" reference-fk="fk_movimiento_detalle_movimiento"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
