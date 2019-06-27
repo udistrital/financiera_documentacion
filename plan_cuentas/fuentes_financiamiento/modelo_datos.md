@@ -30,7 +30,7 @@ almacena la informacion de las fuentes de financiamiento
 
 ### fuente_financiamiento_apropiacion 
 
-- fuente_financiamiento_apropiacion : Tabla que relaciona una fuente de financiamiento con una apropiación
+Tabla que relaciona una fuente de financiamiento con una apropiación
 
 - **Columnas**
 
@@ -45,3 +45,17 @@ almacena la informacion de las fuentes de financiamiento
 - **Restricciones**
 
 - pk_fuente_financiamiento_apropiacion : primary key de la tabla fuente de financiamiento apropiacion
+
+### tipo_fuente_financiamiento
+
+- Tabla para tipificar o catalogar las fuentes de financiamiento
+- **Columnas**
+- tipo_fuente_financiamiento.id : Llave primaria de la tabla tipo_fuente_financiamiento
+
+- tipo_fuente_financiamiento.nombre : Nombre de la categorización de la fuente
+
+- tipo_fuente_financiamiento.descripcion : Descripción que se le pueda dar a la categorización de la fuente. Puede ser cualquier texto que facilite su rápida identificación y comprensión 
+
+- **Restricciones**
+
+- pk_tipo_fuente_financiamiento: primary key de la tabla tipo_fuente_financiamiento

@@ -207,7 +207,7 @@ COMMENT ON COLUMN plan_cuentas.tipo_fuente_financiamiento.id IS 'Llave primaria 
 -- ddl-end --
 COMMENT ON COLUMN plan_cuentas.tipo_fuente_financiamiento.nombre IS 'Nombre de la categorización de la fuente';
 -- ddl-end --
-COMMENT ON COLUMN plan_cuentas.tipo_fuente_financiamiento.descripcion IS 'Descripción que se le pueda dar a la categorización de la fuente. Puede ser cualquier texto que facilite su rápida identificación p comprensión ';
+COMMENT ON COLUMN plan_cuentas.tipo_fuente_financiamiento.descripcion IS 'Descripción que se le pueda dar a la categorización de la fuente. Puede ser cualquier texto que facilite su rápida identificación y comprensión ';
 -- ddl-end --
 COMMENT ON CONSTRAINT pk_tipo_fuente_financiamiento ON plan_cuentas.tipo_fuente_financiamiento  IS 'Constraint PK de la tabla tipo_fuente_financiamiento';
 -- ddl-end --
