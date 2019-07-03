@@ -37,3 +37,6 @@ En el sistema Kronos se cuenta con los siguientes módulos para el subsistema de
 >### Movimientos 
 - [Mockups](movimientos/movimientos/mockups.md)
 - [Modelo de datos](movimientos/movimientos/modelo_datos.md)
+
+### Mock-ups editables
+para realizar cambios o ver de forma mas detallada los mockups del sistema dirigirse a este **[Archivo](https://drive.google.com/file/d/1nBwIdN-Iue5I164bOOjwuNPBYWJMcBPB/view?usp=sharing)**
