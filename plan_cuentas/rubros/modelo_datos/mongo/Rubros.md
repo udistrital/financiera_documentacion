@@ -1,5 +1,5 @@
 # Estructura de rubros para el árbol de rubros
-Los modelos de datos en MongoDB están más enfocados desde el punto de vista de la aplicación, por eso, estos modelos están más definidos directamente en la aplicación y no en un modelado en la base de datos como es más común hacerse.
+Los modelos de datos en MongoDB están más enfocados desde el punto de vista de la aplicación, por eso, estos modelos están  definidos directamente en la aplicación y no en un modelado en la base de datos como es más común hacerse.
 
 La estructura desde el API es la siguiente
 
@@ -26,11 +26,11 @@ Un objeto enviado como parámetro del **servicio POST para registrar** debe tene
 ```json
 {
 	"Vigencia": 2019,
-	"Nombre": "Rubro 3",
-	"Descripcion": "Algo del rubro 3",
+	"Nombre": "Rubro 3-8",
+	"Descripcion": "Algo del rubro 3-8",
 	"IdPsql": 32,
 	"_id": "3-8",
-	"Hijos": ["3-1-1", "3-2-2"],
+	"Hijos": ["3-8-1", "3-8-2"],
 	"Padre": "3",
 	"UnidadEjecutora": "1"
 }
@@ -67,7 +67,7 @@ Lo que indica cada uno de los atributos del json anterior es:
   * **idpsql**: Id al que este registro corresponde en PostgreSQL. Se utiliza principalmente para tener una conexión entre las bases de datos
 * **hijos**: Son los nodos hijos de este nodo, o en otras palabras los que se encuentran en el nivel inmediatamente inferior.
 * **padre**: Es el nodo padre del nodo actual, o en otras palabras el que se encuentra en el nivel inmeditamente superior.
-* **unidadejecutora**: Uniad ejecutora a la que pertenece este nodo
+* **unidadejecutora**: Unidad ejecutora a la que pertenece este nodo
 
 **Ejemplo**:
 ```json
@@ -75,13 +75,13 @@ Lo que indica cada uno de los atributos del json anterior es:
     "_id" : "3-8", 
     "general" : {
         "vigencia" : 2019, 
-        "nombre" : "Rubro 3", 
-        "descripcion" : "Algo del rubro 3", 
+        "nombre" : "Rubro 3-8", 
+        "descripcion" : "Algo del rubro 3-8", 
         "idpsql" : 32
     }, 
     "hijos" : [
-        "3-1-1", 
-        "3-2-2"
+        "3-8-1", 
+        "3-8-2"
     ], 
     "padre" : "3", 
     "unidadejecutora" : "1"
