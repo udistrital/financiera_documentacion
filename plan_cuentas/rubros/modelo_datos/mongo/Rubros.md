@@ -38,7 +38,10 @@ Un objeto enviado como parámetro del **servicio POST para registrar** debe tene
 
 ### Estructura en MongoDB
 
+La **colección** correspondiente a estos documentos es **arbol_rubro**
+
 Cuando se registra un rubro en la estructura **arbol_rubro** lo que estamos registrando es un nodo propio del árbol, no todo el árbol en cuestión.
+
 La estructura de un nodo en MongoDB es la siguiente:
 ```json
 { 
