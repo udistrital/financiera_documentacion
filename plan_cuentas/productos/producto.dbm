@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2-beta" last-position="26,0" last-zoom="0.9" max-obj-count="34"
+	 default-schema="public" default-owner="postgres">
+<role name="crud_user"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="admin_core"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="desarrollooas"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="financiera_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="administrativa_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="core_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="academica_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="administrativa_reportes"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario de consulta para la elaboración de reportes del área administrativa]]></comment>
+</role>
+
+<role name="experiencia_laboral_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de experiencia_laboral_app, que tiene asignado el rol experiencia_laboral_role]]></comment>
+</role>
+
+<role name="sesiones_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de sesiones, que tiene asignado el rol sesiones_role]]></comment>
+</role>
+
+<role name="ubicaciones_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de ubicaciones, que tiene asignado el rol ubicaciones_role]]></comment>
+</role>
+
+<role name="formacion_academica_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de formacion_academica, que tiene asignado el rol formacion_academica_role]]></comment>
+</role>
+
+<role name="idiomas_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de idiomas, que tiene asignado el rol idiomas_role]]></comment>
+</role>
+
+<role name="programa_academico_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de programa_academico, que tiene asignado el rol programa_academico_role]]></comment>
+</role>
+
+<role name="descuentos_posgrado_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de descuentos_posgrado, que tiene asignado el rol descuentos_posgrado_role]]></comment>
+</role>
+
+<role name="gestion_formularios_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de gestion_formularios, que tiene asignado el rol gestion_formularios_role]]></comment>
+</role>
+
+<role name="admisiones_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de admisiones, que tiene asignado el rol admisiones_role]]></comment>
+</role>
+
+<role name="produccion_academica_app"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+	<comment><![CDATA[Usuario pool de aplicación para el api de produccion_academica, que tiene asignado el rol produccion_academica_role]]></comment>
+</role>
+
+<role name="financiera_role"
+      inherit="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="admin_core_cp"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="udistrital_core_db" encoding="UTF8" lc-collate="en_US.UTF-8" lc-ctype="en_US.UTF-8" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" layer="0" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="plan_cuentas" layer="0" rect-visible="true" fill-color="#bc96d5">
+	<role name="desarrollooas"/>
+	<comment><![CDATA[esquema para el módulo plan_cuentas]]></comment>
+</schema>
+
+<table name="producto" layer="0" collapse-mode="2" max-obj-count="4">
+	<schema name="plan_cuentas"/>
+	<role name="admin_core"/>
+	<comment><![CDATA[Tabla para registrar los productos asociados a un rubro.]]></comment>
+	<position x="40" y="60"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[id interno de la tabla]]></comment>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="character varying" length="150"/>
+		<comment><![CDATA[nombre del producto a asociar]]></comment>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="255"/>
+		<comment><![CDATA[descripcion del producto]]></comment>
+	</column>
+	<column name="fecha_registro" not-null="true">
+		<type name="date" length="0"/>
+		<comment><![CDATA[fecha en la que se registro el producto]]></comment>
+	</column>
+	<constraint name="pk_producto" type="pk-constr" table="plan_cuentas.producto">
+		<columns names="id" ref-type="src-columns"/>
+		<comment><![CDATA[identificador primario de la tabla]]></comment>
+	</constraint>
+	<constraint name="uq_nombre_producto" type="uq-constr" table="plan_cuentas.producto">
+		<columns names="nombre" ref-type="src-columns"/>
+		<comment><![CDATA[restriccion de llave unica para el nombre del producto]]></comment>
+	</constraint>
+</table>
+
+<table name="producto_detalle" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="plan_cuentas"/>
+	<role name="admin_core"/>
+	<comment><![CDATA[tabla compuesta para referenciar las operaciones de los productos ]]></comment>
+	<position x="440" y="60"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[identificador interno de los registros de la tabla]]></comment>
+	</column>
+	<column name="rubro_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[referencia al rubro que asocia al producto]]></comment>
+	</column>
+	<column name="producto_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[referencia al producto asociado a un rubro]]></comment>
+	</column>
+	<column name="fuente_financiamiento_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[referencia opcional a la tabla fuente_financiamiento]]></comment>
+	</column>
+	<column name="valor_distribucion" not-null="true">
+		<type name="numeric" length="3" precision="2"/>
+		<comment><![CDATA[Valor asignado en porcentaje por cada producto para el rubro asociado a este mismo]]></comment>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[determina si el paramertro se encuentra activo para Determina si el parametro se encuentra activo para realizar calculos]]></comment>
+	</column>
+	<column name="fecha_registro" not-null="true">
+		<type name="date" length="0"/>
+		<comment><![CDATA[fecha en la que se registro la distribucion]]></comment>
+	</column>
+	<constraint name="pk_producto_detalle" type="pk-constr" table="plan_cuentas.producto_detalle">
+		<columns names="id" ref-type="src-columns"/>
+		<comment><![CDATA[llave primaria de la tabla producto_detalle]]></comment>
+	</constraint>
+</table>
+
+<table name="rubro" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="plan_cuentas"/>
+	<role name="admin_core"/>
+	<position x="940" y="80"/>
+	<column name="id" not-null="true" default-value="nextval('nix_presupuesto.rubro_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[identificador del rubro]]></comment>
+	</column>
+	<column name="organizacion" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[entidad a la que pertenece el rubro]]></comment>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="character varying" length="50"/>
+		<comment><![CDATA[codigo interno]]></comment>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="varchar" length="250"/>
+		<comment><![CDATA[nombre del rubro presupuestal ]]></comment>
+	</column>
+	<column name="unidad_ejecutora" not-null="true">
+		<type name="smallint" length="0"/>
+		<comment><![CDATA[unidad ejecutora del rubro ]]></comment>
+	</column>
+	<column name="descripcion">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Descripcion del rubro presupuestal]]></comment>
+	</column>
+	<constraint name="pk_rubro" type="pk-constr" table="plan_cuentas.rubro">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uq_organizacion_codigo_unidad_ejecutora_rubro" type="uq-constr" table="plan_cuentas.rubro">
+		<columns names="organizacion,codigo,unidad_ejecutora" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="ck_codigo_rubro" type="ck-constr" table="plan_cuentas.rubro">
+			<expression><![CDATA[(((codigo)::text ~ '^([0-9]+-)+[0-9]+$'::text))
+]]></expression>
+	</constraint>
+</table>
+
+<schema name="financiera_cp" layer="0" rect-visible="true" fill-color="#59a5fd">
+	<role name="admin_core"/>
+	<comment><![CDATA[esquema para el módulo presupuestal del sistema financiero]]></comment>
+</schema>
+
+<table name="fuente_financiamiento" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="plan_cuentas"/>
+	<role name="admin_core"/>
+	<comment><![CDATA[tabla en la que se registran las fuentes de financiamiento que maneja la universidad distrital]]></comment>
+	<position x="100" y="380"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[identificador de la Fuente de financiamiento]]></comment>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="character varying" length="70"/>
+		<comment><![CDATA[nombre de la Fuente de financiamiento]]></comment>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="200"/>
+		<comment><![CDATA[descrpcion de la fuente de financiamiento ]]></comment>
+	</column>
+	<column name="fecha_creacion">
+		<type name="date" length="0"/>
+	</column>
+	<column name="tipo_fuente_financiamiento" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="character varying" length="10"/>
+		<comment><![CDATA[codigo de la Fuente de financiamiento que utiliza la universidad distrital]]></comment>
+	</column>
+	<constraint name="pk_fuente_financiamiento" type="pk-constr" table="plan_cuentas.fuente_financiamiento">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tipo_fuente_financiamiento" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="plan_cuentas"/>
+	<role name="admin_core"/>
+	<comment><![CDATA[esta tabla nos permite guardar los tipos de fuentes de financiamiento que pueden ser de inversión o de funcionamiento]]></comment>
+	<position x="820" y="400"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+		<comment><![CDATA[identificador de la tabla tipo_fuente_financiamiento]]></comment>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="character varying" length="70"/>
+		<comment><![CDATA[nombre del tipo de la fuente de financiamiento]]></comment>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="300"/>
+		<comment><![CDATA[ del tipo de la fuente de financiamiento]]></comment>
+	</column>
+	<constraint name="pk_tipo_fuente_financiamiento" type="pk-constr" table="plan_cuentas.tipo_fuente_financiamiento">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_producto_detalle_producto" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="RESTRICT" ref-table="plan_cuentas.producto" table="plan_cuentas.producto_detalle">
+	<columns names="producto_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+		<comment><![CDATA[llave foranea hacia la tabla producto]]></comment>
+</constraint>
+
+<constraint name="fk_producto_detalle_rubro" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="RESTRICT" ref-table="plan_cuentas.rubro" table="plan_cuentas.producto_detalle">
+	<columns names="rubro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+		<comment><![CDATA[llave foranea a la tabla rubro]]></comment>
+</constraint>
+
+<constraint name="fk_producto_detalle_fuente_financiamiento" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="RESTRICT" ref-table="plan_cuentas.fuente_financiamiento" table="plan_cuentas.producto_detalle">
+	<columns names="fuente_financiamiento_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+		<comment><![CDATA[llave foranea a la tabla fuente_financiamiento]]></comment>
+</constraint>
+
+<constraint name="fk_fuente_financiamiento_tipo_fuente_financiamiento" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="plan_cuentas.tipo_fuente_financiamiento" table="plan_cuentas.fuente_financiamiento">
+	<columns names="tipo_fuente_financiamiento" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_producto_rubro_producto" type="relfk" layer="0"
+	 custom-color="#571fde"
+	 src-table="plan_cuentas.producto_detalle"
+	 dst-table="plan_cuentas.producto" reference-fk="fk_producto_detalle_producto"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_producto_rubro_rubro" type="relfk" layer="0"
+	 custom-color="#698762"
+	 src-table="plan_cuentas.producto_detalle"
+	 dst-table="plan_cuentas.rubro" reference-fk="fk_producto_detalle_rubro"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_fuente_financiamiento_tipo_fuente_financiamiento" type="relfk" layer="0"
+	 src-table="plan_cuentas.fuente_financiamiento"
+	 dst-table="plan_cuentas.tipo_fuente_financiamiento" reference-fk="fk_fuente_financiamiento_tipo_fuente_financiamiento"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_producto_detalle_fuente_financiamiento" type="relfk" layer="0"
+	 src-table="plan_cuentas.producto_detalle"
+	 dst-table="plan_cuentas.fuente_financiamiento" reference-fk="fk_producto_detalle_fuente_financiamiento"
+	 src-required="false" dst-required="false"/>
+
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<privileges temporary="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="postgres"/>
+	<privileges create="true" connect="true" temporary="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="crud_user"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="admin_core"/>
+	<privileges create="true" connect="true" temporary="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="financiera_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="administrativa_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="core_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="academica_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="administrativa_reportes"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="experiencia_laboral_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="sesiones_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="ubicaciones_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="formacion_academica_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="idiomas_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="programa_academico_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="descuentos_posgrado_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="gestion_formularios_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="admisiones_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="udistrital_core_db" type="database"/>
+	<roles names="produccion_academica_app"/>
+	<privileges connect="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas" type="schema"/>
+	<roles names="admin_core"/>
+	<privileges create="true" usage="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas" type="schema"/>
+	<roles names="crud_user"/>
+	<privileges usage="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas" type="schema"/>
+	<roles names="financiera_role"/>
+	<privileges usage="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas.producto" type="table"/>
+	<roles names="admin_core"/>
+	<privileges select="true" delete="true" insert="true" update="true" truncate="true" references="true" trigger="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas.producto" type="table"/>
+	<roles names="crud_user"/>
+	<privileges select="true" delete="true" insert="true" update="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas.producto_detalle" type="table"/>
+	<roles names="admin_core"/>
+	<privileges select="true" delete="true" insert="true" update="true" truncate="true" references="true" trigger="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas.producto_detalle" type="table"/>
+	<roles names="crud_user"/>
+	<privileges select="true" delete="true" insert="true" update="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas.rubro" type="table"/>
+	<roles names="admin_core"/>
+	<privileges select="true" delete="true" insert="true" update="true" truncate="true" references="true" trigger="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas.rubro" type="table"/>
+	<roles names="crud_user"/>
+	<privileges select="true" delete="true" insert="true" update="true"/>
+</permission>
+<permission>
+	<object name="plan_cuentas.rubro" type="table"/>
+	<roles names="financiera_role"/>
+	<privileges select="true"/>
+</permission>
+</dbmodel>
