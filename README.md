@@ -28,10 +28,11 @@ En el sistema Kronos se cuenta con los siguientes módulos para el subsistema de
 >### Apropiaciones
 - [Mockups](plan_cuentas/apropiaciones/mockups.md)
 - [Modelo de datos](plan_cuentas/apropiaciones/modelo_datos.md)
->### Fuentes de financiemiento
+>### Fuentes de financiamiento
 - [Mockups](plan_cuentas/fuentes_financiamiento/mockups.md)
 - [Modelo de datos](plan_cuentas/fuentes_financiamiento/modelo_datos.md)
-
+>### Productos
+- [Modelo de datos](plan_cuentas/productos/modelo_datos.md)
 >## Movimientos 
 
 >### Movimientos 
