@@ -19,4 +19,4 @@ Vista de asignación a rubro con apropiación inicial
 ![](https://github.com/udistrital/Financiera_documentacion/blob/document/productos/plan_cuentas/productos/mockups/AsignarRubroProducto.png)
 
 Vista de asignación a fuentes de financiamiento
-![](https://github.com/udistrital/Financiera_documentacion/blob/document/productos/plan_cuentas/productos/mockups/AsginacionFuentes.png)
+![](https://github.com/udistrital/financiera_documentacion/blob/document/productos/plan_cuentas/productos/mockups/AsignacionFuentes.png)
