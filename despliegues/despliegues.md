@@ -32,6 +32,7 @@ Como siguiente paso, los endpoints de los APIs no deben quedar públicos y solo 
 Ya finalizado el registro dentro de WSO2 y con el client_token se podra agregar este token al aplicativo de Angular para la autenticación con el usuario y si he de correr todo bien, se tendra un aplicativo cliente desplegado que se alimenta de las API's, que logra autenticar un usuario para el consumo de estas. Se recomienda asimismo seguir las instrucciones entregadas por el equipo del CORE para los despliegues y configuraciones de los aplicativos basados en Angular 7.
 
 #### Jenkins
+En el siguiente Link se encuentra la información de como trabaja la plataforma de jenkins y cual es el proceso para el despliegue en ambos ambientes. [Ver en Detalle](jenkins.md)
 #### WSO2
 #### Aplicaciones en Go
 #### APlicaciones en Angular 
