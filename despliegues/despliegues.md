@@ -34,8 +34,11 @@ Ya finalizado el registro dentro de WSO2 y con el client_token se podra agregar 
 #### Jenkins
 En el siguiente Link se encuentra la información de como trabaja la plataforma de jenkins y cual es el proceso para el despliegue en ambos ambientes. [Ver en Detalle](jenkins.md)
 #### WSO2
+En el siguiente link se encuentra la información referente a WSO2, sobre el registro de API's, creación del service_provider y autenticación única. [Ver en Detalle](wso2.md)
 #### Aplicaciones en Go
-#### APlicaciones en Angular 
+Las configuraciones para el despliegue en jenkins ya han sido especificadas, asimismo el registro de estas en WSO2, por finalizar queda mencionar que para el despliegue deben contar con pruebas unitarias ya que hace parte de los lineamientos del OAS.
+#### Aplicaciones en Angular 
+Tener en cuenta que el despliegue de los desarrollos mencionados son sobre Angular 7, casos similares podrian necesitar de cambios especificos en las configuraciones.
 ### Preproducción
 ### Producción
 ## Herramientas
