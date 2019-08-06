@@ -28,8 +28,7 @@ Un objeto enviado como parámetro del **servicio POST para registrar** debe tene
 	"Vigencia": 2019,
 	"Nombre": "Rubro 3-8",
 	"Descripcion": "Algo del rubro 3-8",
-	"IdPsql": 32,
-	"_id": "3-8",
+	"Codigo": "3-8",
 	"Hijos": ["3-8-1", "3-8-2"],
 	"Padre": "3",
 	"UnidadEjecutora": "1"
@@ -72,18 +71,13 @@ Lo que indica cada uno de los atributos del json anterior es:
 **Ejemplo**:
 ```json
 { 
-    "_id" : "3-8", 
-    "general" : {
-        "vigencia" : 2019, 
-        "nombre" : "Rubro 3-8", 
-        "descripcion" : "Algo del rubro 3-8", 
-        "idpsql" : 32
+    "Codigo" : "3-8", 
+    "General" : {
+        "Vigencia" : 2019, 
+        "Nombre" : "Rubro 3-8", 
+        "Descripcion" : "Algo del rubro 3-8"
     }, 
-    "hijos" : [
-        "3-8-1", 
-        "3-8-2"
-    ], 
-    "padre" : "3", 
-    "unidadejecutora" : "1"
+    "Padre" : "3", 
+    "UnidadEjecutora" : "1"
 }
 ```
