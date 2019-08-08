@@ -68,7 +68,8 @@ Un objeto enviado como parámetro del servicio POST para registrar debe tener la
 }
 ```
 
-#Estructura en MongoDB
+## Estructura en MongoDB
+
 La **colección** correspondiente a estos documentos es **fuente_financiamiento**
 
 La estructura en MongoDB es la siguiente:
