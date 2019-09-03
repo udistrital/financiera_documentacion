@@ -1,5 +1,5 @@
 # Modelo de datos de NECESIDADES
-## Estructura de rubros para el árbol de rubros
+
 Los modelos de datos en MongoDB están más enfocados desde el punto de vista de la aplicación, por eso, estos modelos están  definidos directamente en la aplicación y no en un modelado en la base de datos como es más común hacerse.
 
 La estructura desde el API es la siguiente
