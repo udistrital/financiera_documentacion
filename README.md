@@ -30,7 +30,7 @@ En el sistema Kronos se cuenta con los siguientes módulos para el subsistema de
 - [Modelo de datos](plan_cuentas/apropiaciones/modelo_datos/mongo/Apropiaciones.md)
 >### Fuentes de financiamiento
 - [Mockups](plan_cuentas/fuentes_financiamiento/mockups.md)
-- [Modelo de datos](plan_cuentas/fuentes_financiamiento/modelo_datos/Mongo/fuente_financiamiento.md)
+- [Modelo de datos](plan_cuentas/fuentes_financiamiento/modelo_datos/mongo/fuente_financiamiento.md)
 >### Productos
 - [Modelo de datos](plan_cuentas/productos/modelo_datos/mongo/productos.md)
 >## Necesidades 
