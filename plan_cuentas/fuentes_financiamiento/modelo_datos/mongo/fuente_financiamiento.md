@@ -14,17 +14,19 @@ type dependenciaRubro struct {
 // rubroFuente Relación entre un rubro y una fuente
 type rubroFuente struct {
 	Dependencias []*dependenciaRubro `json:"Dependencias" bson:"dependencias"`
-	Productos    []int               `json:"Productos" bson:"productos`
+	Productos    []string            `json:"Productos" bson:"productos`
 }
 
 // FuenteFinanciamiento ...
 type FuenteFinanciamiento struct {
 	*General
-	ID             string                       `json:"Codigo" bson:"_id,omitempty"`
-	TipoFuente     interface{}                  `json:"TipoFuente" bson"tipoFuente"`
-	ValorOriginal  float64                      `json:"ValorOriginal" bson:"valorOriginal"`
-	ValorAcumulado float64                      `json:"ValorAcumulado" bson"valorAcumulado"`
-	Rubros         map[codigoRubro]*rubroFuente `json:"Rubros" bson:"rubros"`
+	ID              string                       `json:"Codigo" bson:"_id,omitempty"`
+	TipoFuente      interface{}                  `json:"TipoFuente" bson"tipoFuente"`
+	ValorOriginal   float64                      `json:"ValorOriginal" bson:"valorOriginal"`
+	ValorAcumulado  float64                      `json:"ValorAcumulado" bson"valorAcumulado"`
+	Rubros          map[codigoRubro]*rubroFuente `json:"Rubros" bson:"rubros"`
+	NumeroDocumento string                       `json:"NumeroDocumento" bson:"numeroDocumento"`
+	TipoDocumento   string                       `json:"TipoDocumento" bson:"tipoDocumento"`
 }
 ```
 
@@ -43,7 +45,7 @@ Un objeto enviado como parámetro del servicio POST para registrar debe tener la
 	"Codigo": "fuente3",
 	"Rubros": {
 		"3-1": {
-			"Productos": [1,2,3],
+			"Productos": ["abc","def","hij"],
 			"Dependencias": [
 				{
 					"Id": 30,
@@ -56,7 +58,7 @@ Un objeto enviado como parámetro del servicio POST para registrar debe tener la
 			]
 		},
 		"3-2": {
-			"Productos": [4,5,6],
+			"Productos": ["klm","nño","pqr"],
 			"Dependencias": [
 				{
 					"Id": 35,
@@ -64,7 +66,9 @@ Un objeto enviado como parámetro del servicio POST para registrar debe tener la
 				}
 			]
 		}
-	}
+	},
+	"TipoDocumento": "abc",
+	"NumeroDocumento": "def"
 }
 ```
 
@@ -76,26 +80,28 @@ La estructura en MongoDB es la siguiente:
 
 ```json
 {
-	"Vigencia": "Int32",
-	"Nombre": "String",
-	"Descripcion": "String",
-	"FechaCreacion": "Date",
-	"FechaModificacion": "Date",
-	"Activo": "Boolean",
-	"TipoFuente": "String",
-	"ValorOriginal": "Double",
-	"ValorAcumulado": "Double",
+	"vigencia": "Int32",
+	"nombre": "String",
+	"descripcion": "String",
+	"fechaCreacion": "Date",
+	"fechaModificacion": "Date",
+	"activo": "Boolean",
+	"tipoFuente": "String",
+	"valorOriginal": "Double",
+	"valorAcumulado": "Double",
 	"_id": "String",
-	"Rubros": {
+	"rubros": {
 		"String": {
-			"Productos": "[]Int32",
-			"Dependencias": [{
-                              "Id": "String",
-                              "Valor": "Double"
+			"productos": "[]String",
+			"dependencias": [{
+                              "id": "String",
+                              "valor": "Double"
                              }, "..."
                          ]
 		}
-	}
+	},
+	"tipoDocumento": "String",
+	"numeroDocumento" "String"
 }
 ```
 
@@ -113,3 +119,5 @@ Lo que indica cada uno de los atributos es:
    * Dependencias: Arreglo de diccionarios con la información de las dependencias. 
       * Id: Id de postgresql de la dependencia
       * Valor: Valor asignado a la dependencia en esa fuente
+* **Tipo Documento**: _Por especificar_
+* **Numero Documento**: _Port especificar_
