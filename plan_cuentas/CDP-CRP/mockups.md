@@ -3,7 +3,17 @@
 A continuacion se registran los mockups realizados para las solicitudes y expedición de CDPs y CRPs:
 
 ## CDP
+- Lista de solicitudes de CDP
+![solcdp](mockups/CDP/SolicitudesCDP.png)
 
+- Detalle solicitudes de CDP
+![dcdp](mockups/CDP/VerCDP.png)
+
+- Expedición de CDP
+![ecdp](mockups/CDP/ExpedirCDP.png)
+
+- Lista de CDP
+![lcdp](mockups/CDP/ListaCDP.png)
 
 
 ## CRP
