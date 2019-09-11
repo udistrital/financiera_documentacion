@@ -4,33 +4,18 @@ A continuacion se registran los mockups realizados para las solicitudes y expedi
 
 ## CDP
 
-- Registro fuentes
-
-![Regfuente](mockups/RegistrarFuente.png)
-
-- Registro fuentes
-
-![Cfuente](mockups/ConsultaFuentes.png)
-
-- Asignacion fuente a rubro 
-
-![Afuente](mockups/AsignarFuente.png)
-
-- Notificaciones
-
-![Notif](mockups/NotificacionRegistroFuente.png)
 
 
 ## CRP
 
 - Solicitud de un CRP
 
-![SolCRP](plan_cuentas/CDP-CRP/mockups/CRP/SolicitarCRP.png)
+![SolCRP](https://github.com/udistrital/financiera_documentacion/blob/f/crp/plan_cuentas/CDP-CRP/mockups/CRP/SolicitarCRP.png)
 
 - Consulta de Solicitudes de CRP
 
-![ConsCRP](plan_cuentas/CDP-CRP/mockups/CRP/ConsultarCRP.png)
+![ConsCRP](https://github.com/udistrital/financiera_documentacion/blob/f/crp/plan_cuentas/CDP-CRP/mockups/CRP/ConsultarCRP.png)
 
 - Expedición de un CRP
 
-![ExpCRP](plan_cuentas/CDP-CRP/mockups/CRP/ExpedirCRP.png)
+![ExpCRP](https://github.com/udistrital/financiera_documentacion/blob/f/crp/plan_cuentas/CDP-CRP/mockups/CRP/ExpedirCRP.png)
