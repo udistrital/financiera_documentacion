@@ -87,7 +87,6 @@ Lo que indica cada uno de los atributos del json anterior es:
     * **vigencia**: Vigencia a la que corresponde el registro
     * **nombre**: Nombre propio del registro
     * **descripcion**: Descripción propia del registro
-    * **idpsql**: Id al que este registro corresponde en PostgreSQL. Se utiliza principalmente para tener una conexión entre las bases de datos
   * **hijos**: Son los nodos hijos de este nodo, o en otras palabras los que se encuentran en el nivel inmediatamente inferior.
   * **padre**: Es el nodo padre del nodo actual, o en otras palabras el que se encuentra en el nivel inmeditamente superior.
   * **unidadejecutora**: Unidad ejecutora a la que pertenece este nodo

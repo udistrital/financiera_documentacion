@@ -24,20 +24,24 @@ En el sistema Kronos se cuenta con los siguientes módulos para el subsistema de
 
 >### Rubros
 - [Mockups](plan_cuentas/rubros/mockups.md)
-- [Modelo de datos](plan_cuentas/rubros/modelo_datos.md)
+- [Modelo de datos](plan_cuentas/rubros/modelo_datos/mongo/Rubros.md)
 >### Apropiaciones
 - [Mockups](plan_cuentas/apropiaciones/mockups.md)
-- [Modelo de datos](plan_cuentas/apropiaciones/modelo_datos.md)
+- [Modelo de datos](plan_cuentas/apropiaciones/modelo_datos/mongo/Apropiaciones.md)
 >### Fuentes de financiamiento
 - [Mockups](plan_cuentas/fuentes_financiamiento/mockups.md)
-- [Modelo de datos](plan_cuentas/fuentes_financiamiento/modelo_datos.md)
+- [Modelo de datos](plan_cuentas/fuentes_financiamiento/modelo_datos/mongo/fuente_financiamiento.md)
 >### Productos
-- [Modelo de datos](plan_cuentas/productos/modelo_datos.md)
->## Movimientos 
-
+- [Modelo de datos](plan_cuentas/productos/modelo_datos/mongo/productos.md)
+>## Necesidades 
+- [Modelo de datos](necesidades/modelo_datos/mongo/necesidades_model.md)
 >### Movimientos 
 - [Mockups](movimientos/movimientos/mockups.md)
 - [Modelo de datos](movimientos/movimientos/modelo_datos.md)
+>### CDP y CRP
+- [Mockups](plan_cuentas/CDP-CRP/mockups.md)
+- [Modelo de datos]()
+
 
 ### Mock-ups editables
 para realizar cambios o ver de forma mas detallada los mockups del sistema dirigirse a este **[Archivo](https://drive.google.com/file/d/1nBwIdN-Iue5I164bOOjwuNPBYWJMcBPB/view?usp=sharing)**
