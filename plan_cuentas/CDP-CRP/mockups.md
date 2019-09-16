@@ -20,12 +20,12 @@ A continuacion se registran los mockups realizados para las solicitudes y expedi
 
 - Solicitud de un CRP
 
-![SolCRP](https://github.com/udistrital/financiera_documentacion/blob/f/crp/plan_cuentas/CDP-CRP/mockups/CRP/SolicitarCRP.png)
+![SolCRP](mockups/CRP/SolicitarCRP.png)
 
 - Consulta de Solicitudes de CRP
 
-![ConsCRP](https://github.com/udistrital/financiera_documentacion/blob/f/crp/plan_cuentas/CDP-CRP/mockups/CRP/ConsultarCRP.png)
+![ConsCRP](mockups/CRP/ConsultarCRP.png)
 
 - Expedición de un CRP
 
-![ExpCRP](https://github.com/udistrital/financiera_documentacion/blob/f/crp/plan_cuentas/CDP-CRP/mockups/CRP/ExpedirCRP.png)
+![ExpCRP](mockups/CRP/ExpedirCRP.png)
