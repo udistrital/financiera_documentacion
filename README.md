@@ -40,7 +40,7 @@ En el sistema Kronos se cuenta con los siguientes módulos para el subsistema de
 - [Modelo de datos](movimientos/movimientos/modelo_datos.md)
 >### CDP y CRP
 - [Mockups](plan_cuentas/CDP-CRP/mockups.md)
-- [Modelo de datos]()
+- [Modelo de datos](plan_cuentas/CDP-CRP/modelo_datos_mongo/ModeloDatos.md)
 
 
 ### Mock-ups editables
