@@ -26,6 +26,10 @@ A continuacion se registran los mockups realizados para las solicitudes y expedi
 
 ![ConsCRP](mockups/CRP/ConsultarCRP.png)
 
+- Generación/Consulta de un CRP
+
+![ExpCRP](mockups/CRP/GenerarCRP.png)
+
 - Expedición de un CRP
 
 ![ExpCRP](mockups/CRP/ExpedirCRP.png)
