@@ -11,11 +11,6 @@
     "necesidad" : 1026, 
     "fechaRegistro": "2018-09-01T05:00:00Z",
     "justificacionRechazo" : "" ,
-    "infoCdp" : {
-        "consecutivo": 12,
-        "fechaExpedicion": "2018-09-01T05:00:00Z",
-        "estado": 1
-    }
 }
 ``` 
 - **_id:** identificador unico de una solicitud de CDP
@@ -29,6 +24,39 @@
   - **consecutivo:** consecutivo que genera el servicio para ese CDP en esa vigencia.
   - **fechaExpedicion:** fecha expedicon CDP
   - **estado:** estado cdp ej: parcialmente comprometido
+
+### Expedido de CDP
+> Un CDP expedido se compporta como un movimiento presupuestal, por ello, cuando una solicitud de CDP se aprueba y se expide el CDP, se hace un nuevo registro en la colección: _documento_presuestal__**{vigencia}**__**{centro_gestor}**_
+```json
+{
+    "_id" : "5de06653079c100319f2f2a2",
+    "tipo" : "cdp",
+    "valor_inicial" : 1160000.0,
+    "afectacion_ids" : [ 
+        "5de06653079c100319f2f2a3"
+    ],
+    "fecha_registro" : "2019-11-29T00:29:07Z",
+    "estado" : "expedido",
+    "valor_actual" : 1160000.0,
+    "centro_gestor" : "1",
+    "data" : {
+        "consecutivo_cdp" : 11.0,
+        "solicitud_cdp" : "020201abb243245454554"
+    }
+}
+```
+- **_id**: ID único del documento presupuestal
+- **tipo**: Especifica el tipo del documento presupuestal, en este caso, se guardaran como CDP.
+- **valor_inicial**: Es el valor del registro cuándo se hace por primera vez.
+- **afectacion_ids**: Es un arreglo que tiene todos los ID que hayan afectado a ese documento (incluyendo la propía expedición del CDP). Estos ID corresponden a la colección: _movimientos_**{vigencia}**__**{centro_gestor}**_
+- **valor_inicial**: Fecha en qué se creó el documento presupuestal
+- **estado**: Estado del documento presupuestal, en este caso, se guarda "expedido" puesto que es un CDP expedido.
+- **valor_actual**: Es el valor acual de un documento presupuestal, su valor disminuye o aumenta según sea las afectaciones que tenga asociadas (**afectacion_ids**)
+- **centro_gestor**: Centro gestor al que pertecene el usuario que crea el documento_presupuestal
+- **data**: Data guarda información particular del documento_presupuestal, en el caso del CDP se guardan dos valores:
+    - **consecutivo_cdp**: Es el consecutivo que recibe el CDP una vez se ha expedido
+    - **solicitud_cdp**: Es el id de la solicitud a partir de la cual se expidio el CDP, corresponde a un registro de la colección: **cdp**
+
 
 ### Solicitud de CRP - CRP
 ```json
