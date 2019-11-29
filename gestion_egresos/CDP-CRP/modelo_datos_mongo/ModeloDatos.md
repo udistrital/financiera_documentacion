@@ -26,7 +26,7 @@
   - **estado:** estado cdp ej: parcialmente comprometido
 
 ### Expedido de CDP
-> Un CDP expedido se compporta como un movimiento presupuestal, por ello, cuando una solicitud de CDP se aprueba y se expide el CDP, se hace un nuevo registro en la colección: _documento_presuestal__**{vigencia}**__**{centro_gestor}**_
+> Un CDP expedido se compporta como un movimiento presupuestal, por ello, cuando una solicitud de CDP se aprueba y se expide el CDP, se hace un nuevo registro en la colección: _documento\_presuestal\_**{vigencia}**\_**{centro_gestor}**_
 ```json
 {
     "_id" : "5de06653079c100319f2f2a2",
@@ -46,9 +46,9 @@
 }
 ```
 - **_id**: ID único del documento presupuestal
-- **tipo**: Especifica el tipo del documento presupuestal, en este caso, se guardaran como CDP.
+- **tipo**: Especifica el tipo del documento presupuestal, en este caso, se guardaran como _"cdp"_.
 - **valor_inicial**: Es el valor del registro cuándo se hace por primera vez.
-- **afectacion_ids**: Es un arreglo que tiene todos los ID que hayan afectado a ese documento (incluyendo la propía expedición del CDP). Estos ID corresponden a la colección: _movimientos_**{vigencia}**__**{centro_gestor}**_
+- **afectacion_ids**: Es un arreglo que tiene todos los ID que hayan afectado a ese documento (incluyendo la propía expedición del CDP). Estos ID corresponden a la colección: _movimientos\_**{vigencia}**\_**{centro_gestor}**_
 - **valor_inicial**: Fecha en qué se creó el documento presupuestal
 - **estado**: Estado del documento presupuestal, en este caso, se guarda "expedido" puesto que es un CDP expedido.
 - **valor_actual**: Es el valor acual de un documento presupuestal, su valor disminuye o aumenta según sea las afectaciones que tenga asociadas (**afectacion_ids**)
