@@ -24,7 +24,7 @@
 - **centroGestor:** centro gestor ej: rector
 - **necesidad:** referencia a la necesidad, cons esta llave se traeran todos los datos como objeto, financiacion etc 
 - **fechaRegistro:** fecha en la que se hace la solicitud
-- **estad:** estado de la solicitud de un CDP (ver Estados CDP para la lista completa de estados).
+- **estad:** estado de la solicitud de un CDP (ver [Estados CDP](https://github.com/udistrital/financiera_documentacion/blob/master/gestion_egresos/CDP-CRP/modelo_datos_mongo/ModeloDatos.md#estados-cdp) para la lista completa de estados).
 - **justificacionRechazo:** justificacion de cuando se ha rechazado la solictud por defecto vacio "" 
   
 #### Estados CDP
