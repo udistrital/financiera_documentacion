@@ -10,6 +10,11 @@
     "centroGestor": 1 ,
     "necesidad" : 1026, 
     "fechaRegistro": "2018-09-01T05:00:00Z",
+    "estado": {
+        "id": 1,
+        "nombre": "solicitud",
+        "acronimo": "sol"
+     }
     "justificacionRechazo" : "" ,
 }
 ``` 
@@ -19,12 +24,30 @@
 - **centroGestor:** centro gestor ej: rector
 - **necesidad:** referencia a la necesidad, cons esta llave se traeran todos los datos como objeto, financiacion etc 
 - **fechaRegistro:** fecha en la que se hace la solicitud
+- **estad:** estado de la solicitud de un CDP (ver Estados CDP para la lista completa de estados).
 - **justificacionRechazo:** justificacion de cuando se ha rechazado la solictud por defecto vacio "" 
-- **infoCdp:** objeto que se genera cuando se expide el CDP, pur defecto nulo
-  - **consecutivo:** consecutivo que genera el servicio para ese CDP en esa vigencia.
-  - **fechaExpedicion:** fecha expedicon CDP
-  - **estado:** estado cdp ej: parcialmente comprometido
+  
+#### Estados CDP
+> https://github.com/udistrital/plan_cuentas_mid/blob/8f5e21713aa3f60ac869fa0df08a01717538cc18/models/cdp.go#L30
+```json
+"estado": {
+    "id": 1,
+    "nombre": "solicitud",
+    "acronimo": "sol"
+}
 
+"estado": {
+    "id": 2,
+    "nombre": "rechazado",
+    "acronimo": "rec"
+}
+
+"estado": {
+    "id": 3,
+    "nombre": "expedido",
+    "acronimo": "exp"
+}
+```
 ### Expedido de CDP
 > Un CDP expedido se compporta como un movimiento presupuestal, por ello, cuando una solicitud de CDP se aprueba y se expide el CDP, se hace un nuevo registro en la colección: _documento\_presuestal\_**{vigencia}**\_**{centro_gestor}**_
 ```json
