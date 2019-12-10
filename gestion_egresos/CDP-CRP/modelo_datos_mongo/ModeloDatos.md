@@ -14,7 +14,7 @@
         "id": 1,
         "nombre": "solicitud",
         "acronimo": "sol"
-     }
+     },
     "justificacionRechazo" : "" ,
 }
 ``` 
