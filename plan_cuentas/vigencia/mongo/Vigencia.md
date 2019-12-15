@@ -32,7 +32,7 @@ Para poder registrar una nueva vigencia, la cual será creada con el estado actu
 El nombre de la colección en la que se guardaran los datos de las vigencias se llama **vigencia**
 
 
-Las vigencias quedarán guardadas en MOONGODB con la siguiente estructura: 
+Las vigencias quedarán guardadas en MONGODB con la siguiente estructura: 
 ```json
 {
     "_id" : "ObjectId",
