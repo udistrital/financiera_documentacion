@@ -5,14 +5,13 @@ La estructura de las vigencias dentro del API es la siguiente:
 ```go
 type Vigencia struct {
 	ID            string `json:"Id" bson:"_id,omitempty"`
-	NameSpace     string `json:"NameSpace" bson:"name_space"`
-	CentroGestor  string `json:"CentroGestor" bson:"centro_gestor"`
-	AreaFuncional string `json:"AreaFuncional" bson:"AreaFuncional"`
+	CentroGestor  string `json:"CentroGestor" bson:"centroGestor"`
+	AreaFuncional string `json:"AreaFuncional" bson:"areaFuncional"`
 	Valor         int    `json:"Valor" bson:"valor"`
 	Estado        string `json:"Estado" bson:"estado"`
-  Fecha_creacion  time.Time `json:"fechaCreacion" bson:"fechaCreacion"`
-  Fecha_modificacion  time.Time `json:"fechaModificacion" bson:"fechaModificacion"`
-  Fecha_cierre  time.Time `json:"fechaCierre" bson:"fechaCierre"`
+  FechaCreacion  time.Time `json:"fechaCreacion" bson:"fechaCreacion"`
+  FechaModificacion  time.Time `json:"fechaModificacion" bson:"fechaModificacion"`
+  FechaCierre  time.Time `json:"fechaCierre" bson:"fechaCierre"`
 }
 ```
 
@@ -20,7 +19,6 @@ Para poder registrar una nueva vigencia, la cual será creada con el estado actu
 
 ```json
 {    
-	"NameSpace" : "apropiacion",
     "CentroGestor" : "1",
     "AreaFuncional" : "1",
     "Valor" : 2020,
@@ -36,7 +34,6 @@ Las vigencias quedarán guardadas en MONGODB con la siguiente estructura:
 ```json
 {
     "_id" : "ObjectId",
-    "name_space" : "string",
     "centro_gestor" : "string",
     "area_funcional" : "string",
     "valor" : "int",
@@ -51,7 +48,6 @@ El valor de cada uno de los atributos de la anterior estructura tienen el siguie
 
 **_id:** Atributo único que identifica el registro, se conforma por el año de la vigencia y el centro gestor la que le pertenece.
 
-**name_space:** 
 
 **centro_gestor:** Código del centro gestor al que pertenece la vigencia.
 
