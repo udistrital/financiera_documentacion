@@ -7,7 +7,7 @@ type Vigencia struct {
 	ID            string `json:"Id" bson:"_id,omitempty"`
 	Valor         int    `json:"Valor" bson:"valor"`
 	Estado        string `json:"Estado" bson:"estado"`
-	activo	      boolean	
+	Activo	      boolean `json:"Activo" bson:"activo"`	
   FechaCreacion  time.Time `json:"fechaCreacion" bson:"fechaCreacion"`
   FechaModificacion  time.Time `json:"fechaModificacion" bson:"fechaModificacion"`
   FechaCierre  time.Time `json:"fechaCierre" bson:"fechaCierre"`
