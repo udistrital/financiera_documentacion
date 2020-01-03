@@ -20,3 +20,10 @@
 #
 #### Nota: 
 El propósito del objeto "rubros_afecta" es el de guardar todas las modificaciones realizadas a uno o más rubros, de allí el origen del elemento "Codigo" y "Tipo". A su vez este elemento es definido de forma dinámica para que pueda ser utilizado no solo en modificaciones presupuestas, también en documentos como CDP y CRP que tienen afectación directa o indirecta sobre las apropiaciones.
+
+
+## Estados
+* expedido
+* parcial_comprometido
+* total_comprometido
+* anulado
